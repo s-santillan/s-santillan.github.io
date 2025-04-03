@@ -6,4 +6,5 @@ theme:
   palette:
     primary: blue grey
     accent: indigo
-  font: PT Serif
+  font:
+    text: Noto Serif 
