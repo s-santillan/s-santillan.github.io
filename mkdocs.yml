@@ -1,3 +1,7 @@
 site_name: Thoughts on docs
+site_url: https://s-santillan.github.io/
+site_author: s-santillan
 theme:
   name: material
+
+
