@@ -7,4 +7,10 @@ theme:
     primary: blue grey
     accent: indigo
   font:
-    text: Noto Serif 
+    text: Noto Serif
+markdown_extensions: 
+  - attr_list
+  - md_in_html
+  # Didn't realize I'd need to explicitly allow markdown in html
+extra_css:
+  - stylesheets/custom.css
