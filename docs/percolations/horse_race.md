@@ -1,10 +1,12 @@
-# Progress doesn't have to be a horse race
+# Progress doesn't have to be a { horse || arms } race
+
+### _Selling hammers rather than eliminating problems — Progress built on races — Where are we going?_
 
 <div class="content-2-col" markdown>
 
 <div class="header-2-col" markdown>
 
-## Addressing attacks at the source
+## Introduction: the typosquatting problem
 
 </div>
 
