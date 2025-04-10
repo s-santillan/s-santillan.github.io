@@ -5,3 +5,10 @@ Hello and welcome to **Ergonomic Communication**, a personal site about technica
 ## The author
 
 I'm Sara, a technical writer by day and amorphous tech generalist by night. Many of the posts here are my explorations into finding pleasant, efficient, and ethical ways to work with and learn from the modern web.
+
+## Writing tools
+
+- `nvim` for writing
+- `draw.io` for diagrams
+
+No LLMs have been used to generate content of any kind for this blog. After all, I'm the technical writer — LLMs are trained on what I write, not the other way around.
