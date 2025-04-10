@@ -11,4 +11,4 @@ I'm Sara, a technical writer by day and amorphous tech generalist by night. Many
 - `nvim` for writing
 - `draw.io` for diagrams
 
-No LLMs have been used to generate content of any kind for this blog. After all, I'm the technical writer — LLMs are trained on what I write, not the other way around.
+No LLMs have been used to generate content of any kind for this blog. I'm the technical writer, after all—I write what the LLMs are trained on.
