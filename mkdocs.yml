@@ -1,6 +1,13 @@
+# -----------------------------------------------------------------------------
+# About the site 
+# -----------------------------------------------------------------------------
 site_name: Ergonomic Communication
 site_url: https://s-santillan.github.io/
 site_author: s-santillan
+
+# -----------------------------------------------------------------------------
+# Theme 
+# -----------------------------------------------------------------------------
 theme:
   name: material
   palette:
@@ -9,16 +16,27 @@ theme:
   font:
     text: Noto Serif
   features:
-    - navigation.tabs
-    - navigation.path
+    - navigation.tabs     # Horizontal bar populated by top-level folders ----
+    - navigation.path     # Breadcrumbs --------------------------------------
     - navigation.indexes
-markdown_extensions: 
-  - attr_list
-  - md_in_html
-  # Didn't realize I'd need to explicitly allow markdown in html
+
+# -----------------------------------------------------------------------------
+# Theme overrides
+# -----------------------------------------------------------------------------
 extra_css:
   - stylesheets/custom.css
+markdown_extensions: 
+  - attr_list
+  - md_in_html # Explicitly allow markdown in html
+
+# -----------------------------------------------------------------------------
+# Top horizontal sidebar
+# -----------------------------------------------------------------------------
 nav:
     - Home: 'index.md'
     - Percolations:
       - 'percolations/index'
+    - Workflows:
+      - 'workflows/index'
+    - Game development:
+      - 'game-development/index'
