@@ -6,10 +6,13 @@
 </div>
 
 <div class="body-2-col" markdown>
+
+Hello and welcome to **Ergonomic Communication**, a personal site currently under construction.
+</div>
+</div>
+<!--
 Hello and welcome to **Ergonomic Communication**, a personal site about technical writing and developer tools.
 
-</div>
-</div>
 
 <div class="content-2-col" markdown>
 <div class="header-2-col" markdown>
@@ -56,3 +59,4 @@ No LLMs have been used to generate content of any kind for this blog.
 
 - **A generated-index script**. This script will compile pages within a subfolder into an index page.
 - A proper hand-drawn logo.
+-->

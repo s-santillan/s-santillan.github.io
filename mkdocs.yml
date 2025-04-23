@@ -9,7 +9,7 @@ theme:
   font:
     text: Noto Serif
   features:
-    - navigation.tabs
+    #    - navigation.tabs
     - navigation.path
     - navigation.indexes
 markdown_extensions: 
@@ -18,7 +18,7 @@ markdown_extensions:
   # Didn't realize I'd need to explicitly allow markdown in html
 extra_css:
   - stylesheets/custom.css
-nav:
-    - Home: 'index.md'
-    - Percolations:
-      - 'percolations/index'
+# nav:
+#     - Home: 'index.md'
+#     - Percolations:
+#       - 'percolations/index'
