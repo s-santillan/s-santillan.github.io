@@ -7,7 +7,7 @@
 
 <div class="body-2-col" markdown>
 
-Hello and welcome to **Ergonomic Communication**, a personal site currently under construction.
+Hello and welcome to **i think therefore i communicate**, a personal site currently under construction.
 </div>
 </div>
 <!--
