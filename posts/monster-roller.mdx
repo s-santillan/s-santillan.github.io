@@ -1,0 +1,180 @@
+---
+slug: monster-roller
+title: Monster Roller
+hide_title: true
+hide_table_of_contents: false
+sidenotes: false
+description: "In Monster Roller, you play as a Roller — one who hatches, raises, and collects monsters — in order to earn fame, fortune, and gold by fighting fellow Rollers in the Arena."
+tags:
+  - Case study
+  - UX writing
+  - Content design
+  - UX design
+  - Game design
+  - Narrative writing
+  - Prototyping
+  - Testing
+  - Portfolio
+---
+
+# Monster Roller
+
+<OpenerText>
+In Monster Roller, you play as a Roller — one who hatches, raises, and collects monsters — in order to earn fame, fortune, and gold by fighting fellow Rollers in the Arena. Amass a collection of monsters, fight in real-time PVP, or explore a single-player story mode while offline.
+</OpenerText>
+
+<Gallery ratio='9 / 16' images={[
+  {src: '/img/MR-1.png', alt: 'Loading screen; the microcopy changes'},
+  {src: '/img/MR2.png', alt: 'Tutorial screen'},
+  {src: '/img/MR3.png', alt: 'Main game screen'},
+]} />
+
+## Project Description
+
+2015 saw the rise of the midcore genre in mobile games and the emergence of the Chinese market. Fueled by those trends, developers sought to create games with indefinite play times and a **free-to-play model**, either through subscriptions, micropayments, ads, or some combination of all three. Predictably, the market was (and has been since) dominated by content-heavy, collectible-based, multiplayer games centered on events/arcs with multiple revenue streams. Monster Roller was my team's attempt to give the users options on how they'd play (and/or pay) the game while balancing the "grind" as well as tactics and mechanics.
+
+Unlike other projects, where I pitched to a publisher, from the start of Monster Roller the concept was given to me. I was instructed to make a game using a **slot machine design** — a gambling mechanism so culturally associated with luck and a lack of control that it's called "the one-armed bandit" — while still ensuring the game itself would be a battle of skill through good player choices, not randomness. This assignment was something of an uphill battle, working in reverse to convince players "we're not luck-based, really!" We were also mandated to make the game fully PvP (Player vs Player) with a single-player campaign for offline play. I did scream, in public, at work, but then I went to my corner and started sketching.
+
+For this project, we researched player expectations on midcore games, specifically deck building games. (As in many studios, Hearthstone was constantly mentioned, though the game bears little resemblance to Hearthstone.) Unlike with pure casual games, midcore games have a built-in language that we could build off of; we didn't have to start with an empty slate in the player's mind.
+
+### A Blend of Deck Management and RPG Mechanics
+
+<Gallery  ratio='16 / 9' images={[
+  {src: '/img/IMG_1203.jpg', alt: 'The team prototyping the game'},
+  {src: '/img/IMG_1202.jpg', alt: 'The team prototyping the game'},
+]} />
+
+*The team playing the game with cards and die. We re-balanced the stats by writing on index cards attached to the cards with paperclips.*
+
+The original inspiration for Monster Roller came from turn-based trading card games and RPG (Role Playing Games) battle systems. In most battle systems familiar to hardcore gamers, a blow during a fight can either be:
+
+- a regular attack, dealing damage based on a strength stat,
+- a critical attack, dealing more damage,
+- or a fumble, where the blow doesn't land or does minimal damage.
+
+In classic games like Dungeons and Dragons, the chance or degree of success of that blow depends on the **roll of the die**. Instead of die, Monster Roller used slots so the difference was in how the RNG (Random Number Generator) was *presented*.
+
+The linchpin was how well we'd communicate to the player that "it's just like the RNG in your typical RPG!" The typical mapping in a gamer's mind would be that the slots corresponded to random actions (attack, defend, skill/magic, etc.) — we had to make sure it was clear this *wasn't* what the game would be like. This is not easy, because die make it clear that some variable is manipulated by *degree* while slots imply that the variable is manipulated is *type.*
+
+<Gallery images={[
+  {src: '/img/MR-die.png', alt: 'Dice with slot machine icons'},
+]} />
+
+***Dice vs Slots:** The difference is in player perception and expectation.*
+
+We also kept the concept of a "party" of monsters/companions traveling and fighting together. In most RPG games there are 3-4 active participants in a fight, with the option to swap out. In Monster Roller, in order to give the player more ways to respond to an enemy strategy, we had a total of 6 monsters per battle, with three (which we called the **frontline**) fighting at a time. The next three monsters in a party were called the **bench**, and could be swapped out at any time during the player's turn.
+
+Then the slot concept was molded around sensible, well-known mechanics, to work with them rather than against them. Say you're a fighter with an assortment of punches and kicks that do roughly the same amount of damage. They'd all deal a "normal" amount of damage, but are different types of attack. We applied that to Monster Roller (albeit with more clawing and biting) in which a viable strategy would be to create a party that maximized having attacks of the same type — because they all had the same icon, and having the same icon in slot machines means hitting a jackpot.
+
+<Gallery ratio='9 / 16' images={[
+  {src: '/img/DamageJackpot.jpg', alt: 'Damage jackpot'},
+  {src: '/img/DamageJackpot2.jpg', alt: 'Damage jackpot'},
+]} />
+
+***A Damage Jackpot:** Upon getting 3 of a kind (sharing a yellow background), a weak wave of damage hits the enemy. There's also a much larger jackpot for 3 of a kind matching in color and icon (such as 3 Bites).*
+
+This introduced the importance of "**party management**" in a manner distilled for quick mobile gaming sessions. We further built on this system by having **roles** for monsters: some monsters can attack, but some monsters can heal, can poison the enemy, can defend others, and so on. Thus, the core mechanic of Monster Roller was much the same as many card games: it boiled down to *what* cards are in your deck, which are then use to create certain plays and card combinations — basic deck management. Below is the Team UI screen which helps users decide on what monsters to group together. Through the creation of a visual and textual language, mechanics such as Roles and Jackpots are clear and intuitive to the player.
+
+<Gallery ratio='9 / 16' images={[
+  {src: '/img/TeamUI1.jpg', alt: 'Deck management in the Teams tab'},
+  {src: '/img/Screenshot_2021-09-09-01-25-45-332_com.boomzap.monsterroller.jpg', alt: 'Card for a single monster showing their lore'},
+  {src: '/img/Screenshot_2021-09-09-01-25-41-694_com.boomzap.monsterroller.jpg', alt: 'Card for a single monster showing their attacks'},
+]} />
+
+***Left:** Deck management in the "Teams" tab. It's busy, but you can easily see which monsters are compatible, and you can swap between the Frontline and Bench. **Center & Right**: A "card" for a single monster, who has the role of a Supporter.*
+
+Two other ingredients rounded out a player's decision-making process in battle: the order in which monsters play their abilities (the Switchout system), and the Auto-Targeting system, which was influenced by monster elements and area-of-effect. But these systems are beyond the scope of this portfolio. More in-depth information on how we prototyped these systems to work together, and what these systems are, can be seen in my Monster Roller Retrospective (link forthcoming).
+
+### The Marketing-Design Connection
+
+Because the game was self-published by Boomzap, marketing and design worked together to get the word out.
+
+- Marketing and design jointly collaborated on the press kit. I wrote all the copy for both iOS and Google Play stores; our Marketing Head edited everything I wrote and provided me with a requirements list with word counts and descriptions.
+- Either I or an artist contributed weekly content to a [Wordpress blog](https://web.archive.org/web/20190209011628/http://monsters.boomzap.com/) for a year, detailing the process of creating the game. This also helped Marketing provide content in case they needed to do press work while I was unavailable.
+- We attended local gaming cons to spread the word, such as ESGS 2015, where we were able to present a beta build in their indie corner and ramp up awareness of the game.
+
+<Gallery images={[
+  {src: '/img/mrstage-1.jpg', alt: 'Presenting at a local convention'},
+  {src: '/img/mrwin-4.jpg', alt: 'Winning a local award'},
+]} />
+
+*Me and my team promoting the game at a local convention.*
+
+## My Role and Responsibilities
+
+| My role | Designer & Team Lead |
+| --- | --- |
+| **Core team size** | 10-15 |
+| **Responsibilities** | <ul><li>Design</li><li>UX Writing</li><li>Narrative Writing</li><li>Project Management</li><li>Production</li></ul> |
+| **Documentation produced** | <ul><li>Pitch Deck</li><li>Prototypes</li><li>Tasklist</li><li>Feature Request Documents</li><li>Player Feedback Reports</li><li>Analytics</li><li>Bug Reports (Mantis)</li></ul> |
+| **My tools** | <ul><li>Photoshop</li><li>Excel</li><li>Google Docs (pitch, feedback, and GDD)</li><li>Google Sheets (task sheet, walkthrough)</li><li>Basecamp</li><li>Flurry Analytics</li><li>Proprietary company tools for level, video and UI elements</li></ul> |
+| **Credits** | [Mobygames](https://www.mobygames.com/game/windows/otherworld-shades-of-fall-collectors-edition/credits) |
+
+- I did **product research**, specifically for midcore mobile games, board games, and card games. This included industry research such as compliance for region-specific laws such as COPPA, indie publishing models (Kickstarter was on the rise) and self-publishing analytics.
+- I designed the **rough look of the UI and the flow for the UX.** I decided on the text of the buttons, the grouping of information in each screen, and the way the information would be presented (whether card, list, or some other pattern.) This includes making prototype animation, drawing roughs, etc. The artists would then finalize my sketches.
+- I handled the **stat balancing**, which we did based on percents of a character's HP.
+- I handled the **events funnel** of the game through analytics. We used Flurry to drill down to what stage or event the user had given up on, giving us the opportunity to "smoothen the funnel."
+- Through collaboration with the marketing team, we created a **press kit** with a trailer, screenshots, and text (my contribution) for both iOS and Android stores.
+
+## Project Specs
+
+| Project | Monster Roller |
+| --- | --- |
+| **My role** | Designer / Team Lead |
+| **Developer** | Boomzap |
+| **Publisher** | Boomzap (self-published) |
+| **Genre** | Midcore RPG / Deck Building |
+| **Release Date** | Oct 17, 2013 |
+| **Platforms** | iOS, Android |
+| **Localization** | SEA Localization: English, Taglish, Vietnamese, Thai, Indonesian |
+| **Online stores** | [Google Play Store (Archived)](https://web.archive.org/web/20160321172244/https://play.google.com/store/apps/details?id=com.boomzap.monsterroller) - [iOS App Store (Archived - link may not load)](https://web.archive.org/web/20201108133337/https://apps.apple.com/app/id1050072854) |
+| **Let's play** | [PROAPK on YT](https://www.youtube.com/watch?v=PxUXJLyTAqU&t=2s) |
+
+## Production Gallery
+
+Whereas my previous adventure / point-and-click games were content-heavy with plenty of story writing and assets, Monster Roller was the opposite, where we made iteration after iteration of new UI patterns and UX tweaks. First we did these on cards, then on Excel, then we went through a new UI again and again. **At no phase of alpha or content development was the UI / UX held sacred or final**: it could change at any time, and as soon as the next day's build. We stopped touching the UI / UX flows only when we hit beta (content complete).
+
+<Gallery images={[
+  {src: '/img/TutorialRequest.jpg', alt: 'Tutorial feature request spec'},
+]} />
+<Gallery ratio='5 / 6' images={[
+  {src: '/img/TutorialFinal.jpg', alt: 'Final look of the tutorial'},
+]} />
+
+***Onboarding (tutorial) development:** My request and a sample finished screen on the right. In the end, we didn't implement the "small message box." Other nice trimmings added later included the ability to choose Ottilery's pose.*
+
+<Gallery ratio='9 / 16' images={[
+  {src: '/img/study2-a.jpg', alt: 'Battle UI sketch, literally'},
+  {src: '/img/Team_version2_completeWIDGET.jpg', alt: 'Teambuilder UI'},
+  {src: '/img/OldUI.jpg', alt: 'Monster view or list UI'},
+]} />
+
+***Various prototypes. Left:** my battle UI sketch and lo-fi UX for jackpots. **Middle:** old "Teambuilder" UIs. **Right:** Monster View UI. Note the evolution of the Play button (Initially "Quests") — from having no emphasis, to an increase in size, to a simplification of the whole UI to evoke the feeling of an arcade and the satisfying press of a large button. Skeuomorphic design has its place in games.*
+
+<Gallery ratio='9 / 16' images={[
+  {src: '/img/very-simple-1.gif', alt: 'Combo rewards screen'},
+  {src: '/img/OldNomenclature.jpg', alt: 'Build your team'},
+  {src: '/img/MR3.png', alt: 'Near final monster screen'},
+]} />
+
+*Combo rewards, Build your team, and the Monster screen.*
+
+<Gallery images={[
+  {src: '/img/ScreenHunter_950-Dec.-15-22.29.jpg', alt: 'Trello snapshot'},
+  {src: '/img/ScreenHunter_441-Aug.-14-15.39.jpg', alt: 'UX flow for daily challenges'},
+]} />
+
+***A peek into our daily development:** a Trello snapshot and my initial UX flow for daily challenges.*
+
+<Gallery ratio='9 / 16' images={[
+  {src: '/img/Screenshot_2016-01-21-13-19-49.png', alt: 'Achievements prototype'},
+  {src: '/img/Screenshot_2021-09-09-01-25-45-332_com.boomzap.monsterroller-1.jpg', alt: 'Flavor text for Fernadon, a monster'},
+  {src: '/img/Screenshot_2021-09-09-01-25-24-876_com.boomzap.monsterroller.jpg', alt: 'Flavor text for Leonine, a monster'},
+]} />
+
+***Text, text, text:** All quests, challenges, monsters, slots, jackpots, and so on need at the very least "flavor text." Most features will have tutorials (onboarding text) that needs to be understood by a wide age range.*
+
+## External Links
+
+- [Monster Roller Development Blog (Web Archive)](https://web.archive.org/web/20190209011550/http://monsters.boomzap.com/)
+- Gamasutra feature: [gamedeveloper.com (images broken)](https://www.gamedeveloper.com/business/feature-requirements-in-games) | [archive on gamasutra with images](https://web.archive.org/web/20151010181942/https://www.gamasutra.com/blogs/SaraSantillan/20150818/251544/Feature_Requirements_in_Games.php)

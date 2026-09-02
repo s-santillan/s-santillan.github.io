@@ -1,0 +1,156 @@
+/**
+ * Sidenote presentation. The page-level geometry (--sn-prose, --sn-margin,
+ * --sn-gutter, --sn-pull) is declared in custom.css, since it describes the
+ * page layout rather than the note.
+ *
+ * The cascade is inverted on purpose. The inline presentation is the BASE
+ * state of the note, and the margin float is an enhancement layered on top of
+ * it for wide screens only. That way the three fallbacks — narrow screen,
+ * table cell, print — are one set of declarations rather than three copies,
+ * and none of them needs a shared class name. A shared class would have to be
+ * reachable from custom.css for the table case, and a CSS module's hashed name
+ * is not targetable from the global sheet.
+ *
+ * Consequences of that ordering, both deliberate: print renders correctly
+ * because the float rule is `@media screen`, not because anything mentions
+ * print; and if this stylesheet fails to load, notes are visible rather than
+ * invisible.
+ */
+
+/* Only numbered notes drive the counter; margin notes stay out of it. */
+.anchor {
+  counter-increment: sn;
+}
+
+/* ---------------------------------------------------------------- *
+ * Markers. Both are rendered; the media queries below choose one.
+ * ---------------------------------------------------------------- */
+
+.marker,
+.toggle {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 500;
+  color: var(--ifm-color-primary);
+}
+
+.marker::after,
+.toggle::after {
+  content: counter(sn);
+}
+
+/* The inert one. Hidden in the base state, which is the narrow presentation. */
+.marker {
+  display: none;
+  padding-left: 0.1em;
+}
+
+/* The control. Reset the button back to text, then mark it as activatable —
+   a bare superscript number gives no affordance that it can be tapped.
+   Inline targets within a sentence are exempt from WCAG 2.5.8, so the padding
+   is for comfort rather than conformance. */
+.toggle {
+  background: none;
+  border: 0;
+  border-bottom: 1px dashed var(--ifm-color-primary);
+  border-radius: 0;
+  margin: 0 0.1em;
+  padding: 0 0.15em;
+  font-size: 0.75em;
+  line-height: normal;
+  vertical-align: baseline;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------------- *
+ * The note. Base state: in flow, visible, beneath nothing — it opens at the
+ * marker's position, because the node cannot be moved out of its <p>.
+ * ---------------------------------------------------------------- */
+
+.note {
+  display: block;
+  margin: 0.5rem 0;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--ifm-color-content-secondary);
+  text-align: left;
+}
+
+.note::before {
+  content: counter(sn);
+  font-family: var(--ifm-heading-font-family);
+  font-size: 0.75em;
+  font-weight: 500;
+  vertical-align: super;
+  line-height: 0;
+  color: var(--ifm-color-primary);
+  margin-right: 0.3em;
+}
+
+.plain::before {
+  content: none;
+}
+
+/* ---------------------------------------------------------------- *
+ * Enhancement: the margin itself. Screen only, so print falls back to the
+ * base; and never inside a table cell, where Infima's `overflow: auto` on
+ * `table` clips the float and the cell opens its own formatting context, so
+ * `clear` would not coordinate across the table boundary even if it did not.
+ * `:where()` keeps the exclusion at zero specificity.
+ *
+ * float + clear is what keeps two nearby notes from overlapping: they stack
+ * in source order instead. The negative margin lifts the note clear of the
+ * text column entirely, so it occupies the margin without displacing a line.
+ *
+ * --sn-inset compensates for containers that pad their own content. They
+ * declare it in custom.css, next to the rest of the page geometry, because a
+ * CSS module would hash `.theme-admonition`. It defaults to 0px, so a note in
+ * a paragraph or a list item is unaffected.
+ * ---------------------------------------------------------------- */
+@media screen and (min-width: 997px) {
+  .note:not(:where(td, th) .note) {
+    float: right;
+    clear: right;
+    width: var(--sn-margin);
+    margin: 0 calc(var(--sn-pull) - var(--sn-inset, 0px)) 1.1rem 0;
+  }
+}
+
+/* Print counts with desktop for the marker: a printed note wants its number
+   and has no use for a button. */
+@media screen and (min-width: 997px), print {
+  .marker {
+    display: inline;
+  }
+
+  .toggle {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------- *
+ * Narrow screens: the disclosure, layered on the base state.
+ * ---------------------------------------------------------------- */
+@media screen and (max-width: 996px) {
+  /* MarginNote renders no marker, so it has no control and cannot collapse.
+     It stays visible. */
+  .note:not(.plain) {
+    display: none;
+  }
+
+  .note.isOpen {
+    display: block;
+  }
+
+  /* Box the note only here. It is a disclosure affordance, not part of the
+     note's identity, so it is absent from the margin, print and cell
+     presentations. */
+  .note.isOpen,
+  .plain {
+    margin: 0.5rem 0 1.1rem;
+    padding: 0.6rem 0.9rem;
+    border-left: 2px solid var(--ifm-color-primary);
+    border-radius: 0 3px 3px 0;
+    background: var(--ifm-color-emphasis-100);
+  }
+}

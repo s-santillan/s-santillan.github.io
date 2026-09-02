@@ -1,0 +1,15 @@
+/**
+ * OpenerText.
+ *
+ * Everything else about the element is left alone deliberately: it is a <p>,
+ * so it already inherits the body face, the measure and the paragraph margin.
+ */
+
+.opener {
+  /* Size belongs to the theme, so it is
+     changed there rather than behind a component-private variable. */
+  font-size: var(--ifm-h4-font-size);
+  font-weight: var(--ifm-font-weight-normal); /* explicit */
+  line-height: 1.45;
+  font-style: italic;
+}

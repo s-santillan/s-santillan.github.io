@@ -1,0 +1,101 @@
+# Relentless 
+
+<Gallery images={[
+  {src: '/img/Battleground1.jpg', alt:''},
+  {src: '/img/Battleground2.jpg', alt:''},
+  {src: '/img/2018-09-26-19_28_54-Zombie-Battleground.png', alt:''},
+  {src: '/img/2018-09-27-00_14_08-3D03F3F0-CBA9-4F45-9C21-223D1C9F6673.MP4.png', alt:''},
+]} />
+
+In 2018, a former colleague got in touch with me to work with them again on a trading card game. I joined the team halfway through production.
+
+## Project Description
+
+Relentless is a trading card game in the same vein as Hearthstone, themed around a colorful zombie apocalypse. It has the standard feature set: PvP, Leaderboards, Events, and the like. The twist in this production comes in the form of "true rarity" in digital card economies. As cards are placed on the Ethereum blockchain, their amount is permanently limited, their provenance (origin) and transaction records are made public, and when "printing" (minting) is done, it's done.
+
+This gives cards a value that cannot be rebalanced to dilution by software updates, unlike when other collectible-based gacha games rebalance their card or collectible economies without transparency. This also **prevents booster pack abuse,** in which digital card games create a rarity so great a player can buy 100 packs without receiving a powerful or rare card. This is a source of frustration for users in the free-to-play space, and blockchain was Loom Network's answer.
+
+### Vertical Slices vs Minimum Viable Products; Static Products vs Rolling Updates
+
+Relentless's process was a blend of web development and game development. While to outsiders the creation of a digital product may look the same, *content* in video games is frequently not user-generated, unlike social media or CRUD-type apps. The traditional (pre-2010s) goal in early game development, when pitching to publishers, is the creation of a **vertical slice** — a playable build with core features in place but with limited content, *not* meant for market release. Then the team would continue to progress, adding assets, testing mechanics, etc., until the team was ready to release a complete product. This is different from the tech industry's **minimum viable product** where core features are in place for market release with little or even no content, then updated after. Vertical slices of content are not typical of tech, as the end user can provide content, testing, and usage analytics whereas in games the content is provided by the developer.
+
+The old game-making model has changed over the past decade to pick up some tendencies from tech: video games tend to do a bit of both now. They'll still do a vertical slice, but the games themselves are no longer static products that don't update except for patch fixes; these days DLC has turned even AAA video games into a minimum viable product with a price tag of about 60 USD and rolling updates in the form of DLC.
+
+<Gallery images={[
+  {src: '/img/vertical-slice.png', alt:''},
+]} />
+
+***Source:** [Ask a gamedev](https://askagamedev.tumblr.com/post/77406994278/game-development-glossary-the-vertical-slice)*
+
+Another difference between tech and games are the 2-week sprints in Agile (more common outside of game development) and the 1-week tasking cycle at my previous employment in a games studio, following a Results Only Work Environment (ROWE). Also, whereas daily builds are enforceable in a game company because of the amount of content produced in a day — it's not just the web developers who are adding content into the product — in Relentless (following a more web dev pipeline), a new build wasn't expected every day until we were closer to release.
+
+### Team Communication
+
+In more practical, day-to-day production, terms as simple as **localization strings** had to be explained as **shortcodes** (not entirely the same, but for localization purposes, it was). The design team's job was to manage several different team compositions on top of design work. And depending on who you asked, the design team was either "Design" or "Product." Over time these issues were ironed out — the most important thing was making sure game designers and artists could be understood by web/blockchain developers.
+
+Relentless went live in 2019.
+
+## My Role and Responsibilities
+
+| My role | QA, Technical Designer |
+| --- | --- |
+| Core team size | 30+ |
+| Responsibilities | QA (Playtesting), Production, Data Tools |
+| Documentation produced | Feature Request Documents (specifically for Debug UI), Playtesting feedback, Bug Reports |
+| My tools | Excel (as game data exporter), Google Slides (pitching additional content features, feedback, etc.), Google Sheets (task sheet, walkthrough), Trello, Unity |
+| Credits | [Mobygames](https://www.mobygames.com/game/windows/relentless/credits) |
+
+When I first started the job, I noticed two missing systems. Relentless needed a **localization system**, and a **data export system**. In order to get these features in, I agreed to full time work as a **Technical Designer**, seeing that the team was already well-served by a fellow game designer whose speciality was in board games.
+
+- I served as the link between the games team and the tech team, mediating feature requests and implementation when necessary.
+- I proposed and designed tools to offload data export into the build directly from the Design team, specifically the zombie data (stats) and tutorial events.
+- I tested the the game to report and clean up minor design and text bugs.
+- I handled production tasking to make sure that the artists were fully tasked for the week.
+
+## Project Specs
+
+| Project | Relentless |
+| --- | --- |
+| My role | QA (part-time), transitioned into Technical Designer (full-time) |
+| Developer | Loom Network |
+| Publisher | Loom Network (self-published) |
+| Genre | Trading Card Game |
+| Timeline | Early 2018- May 2019* |
+| Online Download | [Loom Network - APK](https://loom.games/releases/relentless-android.apk) - [iOS App Store (Archived)](https://web.archive.org/web/20190914195932if_/https://apps.apple.com/us/app/zombie-battleground-tcg/id1432628453) - [Open-Source (For Developers)](https://loomx.io/developers/en/relentless.html) |
+| Let's play | [OGLPLAYS on YT](https://www.youtube.com/watch?v=6Ux3pX3-oGA&t=6s) |
+
+*I joined the Relentless team in August 2018.
+
+## Production Gallery — Tool Development
+
+One of Loom's earliest attempts to fix the workflow was to provide a tool to change (export) data. In the beginning, we had little say in tool design. I worked with a programmer but later on had to abandon the export tool as the single-entry webform UI wasn't right for bulk edits. Sweeping changes based on data normalization is common in the industry — how else do game designers change 100 units at once?
+
+<Gallery images={[
+  {src: '/img/2018-09-26-20_52_06-ZBGCard-tool.png', alt:''},
+]} />
+
+***Single-Entry Webform UI:** Here I am helping the programmer debug a company-mandated tool for me to use. I eventually found the UI too cumbersome to use. After this, Loom Network improved the communication between teams to get us resources for tools we'd actually use.*
+
+From my previous years of experience I made my own bulk export tool using Excel VBA which also configured the upload command.
+
+<Gallery images={[
+  {src: '/img/2021-09-13-19_25_41-ZB_Gamedata---Excel.png', alt:''},
+]} />
+
+***Exporter:** The tool I built for myself. You press a button (not pictured) to export a JSON file.*
+
+Compare this with the single-entry webform! Imagine clicking on a drop down box to select a `kind` of creature 100x (and having to press submit each time) rather than just dragging down an entry to copy similar attributes, which will immediately make 100 creatures of one `kind`.
+
+<Gallery images={[
+  {src: '/img/2021-09-13-20_01_21-card_library_data_source_v2.json--M___DESKTOP----GVIM.png', alt:''},
+]} />
+
+***JSON file:** Exported data file that is sent to the back end.*
+
+Another early design which had to be entirely remade was the tutorial flow. **Tutorials are usually one of the last features before the content complete milestone.** This frequently results in crunch because the amount of event triggers and custom events in tutorials is done late and tested late too. It was the holiday season and we were out of programmer time, so I wrote the tool based on the programmer's classes with their knowledge and approval, and exported all the data revisions (including in-game dialog).
+
+<Gallery images={[
+  {src: '/img/2021-09-13-19_29_09-ZB_Tutorial---Excel.png', alt:''},
+]} />
+
+***Tutorial Exporter:** My personal tutorial data exporter. I wrote all the in-game tutorial text myself. I did not architect the classes/attributes; those were done by the game engineer.*

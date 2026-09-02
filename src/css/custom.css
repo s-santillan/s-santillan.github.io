@@ -1,0 +1,391 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ *
+ * Infima is mapped onto the Flexoki palette (see ./flexoki.css).
+ * Flexoki convention: light mode uses paper + 600-level accents,
+ * dark mode uses black + 400-level accents.
+ */
+
+/* ---------------------------------------------------------------- *
+ * Light mode — paper ground, 600-level accents
+ * ---------------------------------------------------------------- */
+:root {
+  --ifm-font-family-base: "PT Serif", Georgia, Times, serif;
+  /* Rubik is loaded from Google Fonts (see `stylesheets` in
+     docusaurus.config.ts).  */
+  --ifm-heading-font-family: "Rubik", sans-serif;
+  --ifm-font-family-monospace: "Datatype", "Input", monospace;
+
+  /* Accent: flexoki blue. Swap the blue-* refs below for any hue ramp. */
+  --ifm-color-primary: var(--flexoki-blue-600);
+  --ifm-color-primary-dark: var(--flexoki-blue-700);
+  --ifm-color-primary-darker: var(--flexoki-blue-800);
+  --ifm-color-primary-darkest: var(--flexoki-blue-850);
+  --ifm-color-primary-light: var(--flexoki-blue-500);
+  --ifm-color-primary-lighter: var(--flexoki-blue-400);
+  --ifm-color-primary-lightest: var(--flexoki-blue-300);
+
+  /* Surfaces and text */
+  --ifm-background-color: var(--flexoki-paper);
+  --ifm-background-surface-color: var(--flexoki-50);
+  --ifm-font-color-base: var(--flexoki-black);
+  --ifm-font-color-base-inverse: var(--flexoki-paper);
+  --ifm-heading-color: var(--flexoki-black);
+  --ifm-color-content-secondary: var(--flexoki-600);
+
+  /* Emphasis scale drives borders, dividers, hover states, TOC rules */
+  --ifm-color-emphasis-0: var(--flexoki-paper);
+  --ifm-color-emphasis-100: var(--flexoki-50);
+  --ifm-color-emphasis-200: var(--flexoki-100);
+  --ifm-color-emphasis-300: var(--flexoki-150);
+  --ifm-color-emphasis-400: var(--flexoki-200);
+  --ifm-color-emphasis-500: var(--flexoki-300);
+  --ifm-color-emphasis-600: var(--flexoki-400);
+  --ifm-color-emphasis-700: var(--flexoki-600);
+  --ifm-color-emphasis-800: var(--flexoki-800);
+  --ifm-color-emphasis-900: var(--flexoki-950);
+  --ifm-color-emphasis-1000: var(--flexoki-black);
+
+  /* Chrome */
+  /* Infima defaults the drawer to 83vw, which is far too wide now that the
+     hamburger shows at every breakpoint. Cap it, keeping 83vw on narrow screens. */
+  --ifm-navbar-sidebar-width: min(20rem, 83vw);
+  --ifm-navbar-background-color: var(--flexoki-paper);
+  --ifm-footer-background-color: var(--flexoki-50);
+
+  /* Status colors — drive admonitions, alerts, badges */
+  --ifm-color-secondary: var(--flexoki-100);
+  --ifm-color-secondary-dark: var(--flexoki-150);
+  --ifm-color-secondary-contrast-background: var(--flexoki-50);
+  --ifm-color-secondary-contrast-foreground: var(--flexoki-black);
+
+  --ifm-color-success: var(--flexoki-green-600);
+  --ifm-color-success-dark: var(--flexoki-green-700);
+  --ifm-color-success-contrast-background: var(--flexoki-green-50);
+  --ifm-color-success-contrast-foreground: var(--flexoki-green-800);
+
+  --ifm-color-info: var(--flexoki-cyan-600);
+  --ifm-color-info-dark: var(--flexoki-cyan-700);
+  --ifm-color-info-contrast-background: var(--flexoki-cyan-50);
+  --ifm-color-info-contrast-foreground: var(--flexoki-cyan-800);
+
+  --ifm-color-warning: var(--flexoki-yellow-600);
+  --ifm-color-warning-dark: var(--flexoki-yellow-700);
+  --ifm-color-warning-contrast-background: var(--flexoki-yellow-50);
+  --ifm-color-warning-contrast-foreground: var(--flexoki-yellow-800);
+
+  --ifm-color-danger: var(--flexoki-red-600);
+  --ifm-color-danger-dark: var(--flexoki-red-700);
+  --ifm-color-danger-contrast-background: var(--flexoki-red-50);
+  --ifm-color-danger-contrast-foreground: var(--flexoki-red-800);
+
+  /* Code and quotes */
+  --ifm-code-font-size: 100%;
+  --ifm-font-size-base: 18px;
+  --ifm-code-background: var(--flexoki-100);
+  --ifm-blockquote-color: var(--flexoki-700);
+  --ifm-blockquote-border-color: var(--flexoki-150);
+  --docusaurus-highlighted-code-line-bg: rgba(16, 15, 15, 0.08);
+  /* Both, not just -xl: Infima only applies the -xl value above 1440px,
+     so overriding it alone left every narrower viewport on the 1140px
+     default — the page got *narrower* as the screen got bigger. */
+  --ifm-container-width: 1024px;
+  --ifm-container-width-xl: 1024px;
+  --ifm-h1-font-size: 2.8rem;
+
+  /* Infima ships 1rem, and `.markdown` enlarges only h1, h2 and h3 — so at an
+     18px root an h4 came out at exactly body size, distinguishable from a
+     paragraph by weight alone. Also the size <OpenerText> reads. */
+  --ifm-h4-font-size: 1.25rem;
+  --ifm-h5-font-size: 1.15rem;
+}
+
+/* ---------------------------------------------------------------- *
+ * Dark mode — black ground, 400-level accents
+ * ---------------------------------------------------------------- */
+[data-theme='dark'] {
+  --ifm-color-primary: var(--flexoki-blue-400);
+  --ifm-color-primary-dark: var(--flexoki-blue-500);
+  --ifm-color-primary-darker: var(--flexoki-blue-600);
+  --ifm-color-primary-darkest: var(--flexoki-blue-700);
+  --ifm-color-primary-light: var(--flexoki-blue-300);
+  --ifm-color-primary-lighter: var(--flexoki-blue-200);
+  --ifm-color-primary-lightest: var(--flexoki-blue-150);
+
+  --ifm-background-color: var(--flexoki-black);
+  --ifm-background-surface-color: var(--flexoki-950);
+  --ifm-font-color-base: var(--flexoki-200);
+  --ifm-font-color-base-inverse: var(--flexoki-black);
+  --ifm-heading-color: var(--flexoki-100);
+  --ifm-color-content-secondary: var(--flexoki-500);
+
+  --ifm-color-emphasis-0: var(--flexoki-black);
+  --ifm-color-emphasis-100: var(--flexoki-950);
+  --ifm-color-emphasis-200: var(--flexoki-900);
+  --ifm-color-emphasis-300: var(--flexoki-850);
+  --ifm-color-emphasis-400: var(--flexoki-800);
+  --ifm-color-emphasis-500: var(--flexoki-700);
+  --ifm-color-emphasis-600: var(--flexoki-600);
+  --ifm-color-emphasis-700: var(--flexoki-400);
+  --ifm-color-emphasis-800: var(--flexoki-200);
+  --ifm-color-emphasis-900: var(--flexoki-50);
+  --ifm-color-emphasis-1000: var(--flexoki-paper);
+
+  --ifm-navbar-background-color: var(--flexoki-black);
+  --ifm-footer-background-color: var(--flexoki-950);
+
+  --ifm-color-secondary: var(--flexoki-800);
+  --ifm-color-secondary-dark: var(--flexoki-850);
+  --ifm-color-secondary-contrast-background: var(--flexoki-900);
+  --ifm-color-secondary-contrast-foreground: var(--flexoki-100);
+
+  --ifm-color-success: var(--flexoki-green-400);
+  --ifm-color-success-dark: var(--flexoki-green-500);
+  --ifm-color-success-contrast-background: var(--flexoki-green-950);
+  --ifm-color-success-contrast-foreground: var(--flexoki-green-100);
+
+  --ifm-color-info: var(--flexoki-cyan-400);
+  --ifm-color-info-dark: var(--flexoki-cyan-500);
+  --ifm-color-info-contrast-background: var(--flexoki-cyan-950);
+  --ifm-color-info-contrast-foreground: var(--flexoki-cyan-100);
+
+  --ifm-color-warning: var(--flexoki-yellow-400);
+  --ifm-color-warning-dark: var(--flexoki-yellow-500);
+  --ifm-color-warning-contrast-background: var(--flexoki-yellow-950);
+  --ifm-color-warning-contrast-foreground: var(--flexoki-yellow-100);
+
+  --ifm-color-danger: var(--flexoki-red-400);
+  --ifm-color-danger-dark: var(--flexoki-red-500);
+  --ifm-color-danger-contrast-background: var(--flexoki-red-950);
+  --ifm-color-danger-contrast-foreground: var(--flexoki-red-100);
+
+  --ifm-code-background: var(--flexoki-900);
+  --ifm-blockquote-color: var(--flexoki-300);
+  --ifm-blockquote-border-color: var(--flexoki-850);
+  --docusaurus-highlighted-code-line-bg: rgba(255, 252, 240, 0.08);
+}
+
+/* Infima hardcodes the dark-footer palette, so override the vars directly. */
+.footer--dark {
+  --ifm-footer-background-color: var(--flexoki-950);
+  --ifm-footer-color: var(--flexoki-300);
+  --ifm-footer-link-color: var(--flexoki-300);
+  --ifm-footer-link-hover-color: var(--flexoki-paper);
+  --ifm-footer-title-color: var(--flexoki-50);
+}
+
+/* Hide the docs left sidebar at every breakpoint. Theme-classic already hides
+   .docSidebarContainer below 997px; this extends that to desktop too. */
+.theme-doc-sidebar-container {
+  display: none !important;
+}
+
+/* With the sidebar gone, theme-classic still caps the doc <main> at
+   calc(100% - var(--doc-sidebar-width)), leaving the content stuck left.
+   Reclaim the full row so the inner .container recenters. */
+.theme-doc-sidebar-container + main {
+  max-width: 100% !important;
+}
+
+/* Show the navbar hamburger at every breakpoint. Infima hides .navbar__toggle
+   globally and only reveals it below 997px; the matching JS gate is lifted in
+   the swizzled src/theme/Navbar/MobileSidebar/index.tsx. */
+.navbar__toggle {
+  display: inherit;
+}
+
+/* Drawer "go forward" affordance. Infima's caret icon is a chevron pointing
+   up at 0deg, and .menu__link--sublist-caret turns it to 180deg (down, i.e.
+   "expands in place"). Ours moves the drawer to another panel, so point it
+   right, mirroring the "← Back to main menu" button it pairs with. */
+.navbar-sidebar__forward {
+  /* Infima's .clean-btn resets font-family but not font-size, so a <button>
+     carrying it keeps the UA's ~13.3px button default while the sibling
+     <a class="menu__link"> inherits the body's 18px. Upstream hit the same
+     hole and hardcoded `font-size: 15px` on .navbar-sidebar__back; inheriting
+     is better here, because it keeps this button tracking whatever size
+     .menu__link is later given rather than pinning a second number. */
+  font-size: inherit;
+}
+
+.navbar-sidebar__forward::after {
+  transform: rotate(90deg);
+}
+
+
+
+
+/* ---------------------------------------------------------------- *
+ * Marginalia — Tufte sidenotes.
+ *
+ * Page geometry only: measure, gutter, margin column. The note itself
+ * is styled in src/components/Marginalia/styles.module.css.
+ * ---------------------------------------------------------------- */
+:root {
+  /* The measure, in ch so it tracks the actual font rather than a root
+     size declared in a different rule. --ifm-font-size-base is 18px
+     here, so rem-based measures silently ran ~10% wide. */
+  --sn-prose: 65ch;
+  --sn-gutter: 2rem;
+  --sn-margin: 15rem;
+  --sn-pull: calc(-1 * (var(--sn-margin) + var(--sn-gutter)));
+}
+
+/* One line length for every post, whether or not it carries sidenotes.
+   Without this, turning the TOC off silently rewidens the prose, and two
+   posts read at different measures for no reason the author chose. */
+.markdown {
+  max-width: var(--sn-prose);
+}
+
+/* Set by the DocItem/Layout wrapper from `sidenotes: true` frontmatter.
+   Left-aligned rather than centred, so the text starts at the same x as
+   on a post without notes — only the margin column is added beside it. */
+.sidenotes-page article {
+  counter-reset: sn;
+  max-width: calc(var(--sn-prose) + var(--sn-gutter) + var(--sn-margin));
+}
+
+/* ---------------------------------------------------------------- *
+ * The inset protocol (phase 5).
+ *
+ * A note inside a container that pads its own content starts further left
+ * than one in a paragraph, so the negative pull overshoots by exactly that
+ * container's right inset. Each insetting container declares how far, and
+ * the note subtracts it: styles.module.css reads --sn-inset, defaulting to
+ * 0px, so a paragraph or list item needs nothing.
+ *
+ * Derived from Infima's own variables rather than written as literals. The
+ * spec quoted `calc(1rem + 5px)` and `calc(1rem + 2px)` from spike 01, which
+ * is wrong twice over: those add each container's LEFT border, which does not
+ * move the right content edge under `box-sizing: border-box`, and they were
+ * measured against a 16px root (the spike artifact's, not this site's 18px).
+ * Both containers pad by --ifm-spacing-horizontal and carry their border on
+ * the left only, so the right inset is the padding alone for a blockquote,
+ * and the padding plus the (0px by default) non-left border for an alert.
+ *
+ * Known limitation: this inherits, so a note picks up the innermost
+ * container's value. Nested containers do not sum — a note in a blockquote
+ * inside an admonition undercompensates. Custom properties cannot reference
+ * themselves, so an additive version would need the combinations enumerated.
+ * Left as a limitation; the arrangement is rare.
+ * ---------------------------------------------------------------- */
+.theme-admonition {
+  --sn-inset: calc(
+    var(--ifm-alert-padding-horizontal) + var(--ifm-alert-border-width)
+  );
+}
+
+blockquote {
+  --sn-inset: var(--ifm-blockquote-padding-horizontal);
+}
+
+/* ---------------------------------------------------------------- *
+ * One right-hand column, whichever kind of post you are on.
+ *
+ * The TOC is a percentage column (col--3) while the sidenote margin is
+ * a fixed 15rem, so the two drifted apart — and by different amounts at
+ * different viewports. Sizing each column to its own content plus its
+ * padding pins both page types to identical geometry, because .col's
+ * 1rem side padding supplies exactly the 2rem gutter between them:
+ *
+ *   prose        18 → 603   (65ch)
+ *   gutter      603 → 639   (2rem, from the two cols' padding)
+ *   right col   639 → 909   (15rem: TOC items, or sidenotes)
+ *
+ * Only applies where a desktop TOC actually exists; a sidenotes post
+ * has no TOC column and is governed by the article rule above.
+ * ---------------------------------------------------------------- */
+@media (min-width: 997px) {
+  /* The two columns come to within a few px of the 1024px row, and the prose
+     side is measured in `ch`, which is the advance width of the font's "0" and
+     so is not a number browsers have to agree on. Firefox resolves it about a
+     px wider than Chrome at this root size, the pair overflows the line, and
+     `flex-wrap: wrap` drops the TOC underneath the article. Pinning the row to
+     one line makes the fit a shrink problem rather than a wrap problem. */
+  .row:has(> .col--3 > .theme-doc-toc-desktop) {
+    flex-wrap: nowrap;
+  }
+
+  .row > .col--3:has(> .theme-doc-toc-desktop) {
+    --ifm-col-width: calc(
+      var(--sn-margin) + 2 * var(--ifm-spacing-horizontal)
+    );
+
+    /* See the note on the content column below. */
+    min-width: 0;
+  }
+
+  /* theme-classic caps this column at 75% with !important, through a
+     CSS-module class whose hashed name we cannot target from here — so
+     the override matches on structure and has to be !important too. */
+  .row:has(> .col--3 > .theme-doc-toc-desktop) > .col:first-child {
+    /* Shrinkable, not fixed. Line breaking uses an item's hypothetical size,
+       before any shrinking, so `flex-shrink` alone would not have stopped the
+       wrap above; paired with `nowrap` it is what lets the prose give up the
+       last few px instead of pushing the TOC off the line. `.markdown` still
+       caps the text at the measure, so this can only ever fall short of 65ch,
+       never exceed it. */
+    flex: 0 1 calc(var(--sn-prose) + 2 * var(--ifm-spacing-horizontal));
+    max-width: calc(
+      var(--sn-prose) + 2 * var(--ifm-spacing-horizontal)
+    ) !important;
+
+    /* A flex item defaults to `min-width: auto`, i.e. its own min-content
+       width, which beats the flex-basis above. An oversized <img> only shrinks
+       through `max-width: 100%`, a percentage, which is indefinite while the
+       item is being intrinsically sized — so the screenshots in posts/ can
+       contribute their full pixel width. Firefox honours that minimum, the row
+       overflows its line, and `flex-wrap: wrap` on .row drops the TOC column
+       underneath the article. Chrome clamps instead and looks fine. */
+    min-width: 0;
+  }
+}
+
+/* ---------------------------------------------------------------- *
+ * Landing page.
+ *
+ * `landing-page` is stamped on <html> by src/pages/index.tsx, through
+ * HtmlClassNameProvider — the same mechanism the sidenotes page class uses.
+ * The footer is switched off with Layout's `noFooter` prop; the navbar has no
+ * equivalent, since Layout renders <Navbar /> unconditionally, so it goes here.
+ *
+ * Note this takes the site's only navigation off the page: the navbar carries
+ * the hamburger, which is the whole nav at every breakpoint. The page has to
+ * supply its own links.
+ * ---------------------------------------------------------------- */
+.landing-page .navbar {
+  display: none;
+}
+
+/* ---------------------------------------------------------------- *
+ * Custom styles for HTML elements 
+ * 
+ * ---------------------------------------------------------------- */
+
+
+blockquote {
+  font-family: var(--ifm-heading-font-family);
+}
+
+.menu__link--sublist-caret::after {
+  min-width:0.5rem;
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1rem 2rem;
+}
+
+.youtube-embed {
+  max-width: 480px;
+  max-height: 270px;
+  width: 100%;
+  height: 270px;
+}
+
+.hero--primary {
+  padding-bottom: 2rem !important;
+}
+
+h5 {
+  font-size: var(--ifm-h5-font-size);
+}

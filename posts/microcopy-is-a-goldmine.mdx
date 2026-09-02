@@ -1,0 +1,146 @@
+---
+slug: microcopy-is-a-goldmine
+title: Microcopy is a goldmine, and sometimes a minefield
+hide_title: true
+hide_table_of_contents: true
+sidenotes: true
+description: Compromises in word choice—Sometimes UX writing is purposely indirect—We set a franchise in Britain but the words are all-American.
+tags:
+  - UX writing
+  - Content design
+  - Game design
+  - Narrative writing
+  - Portfolio
+---
+
+# Microcopy is a goldmine, and sometimes a minefield
+
+<OpenerText>
+**In this post**: Compromises in word choice—Sometimes UX writing is purposely indirect—We set a franchise in Britain but the words are all-American.
+</OpenerText>
+
+What do you tell a user when they input `8===D` for their account name? Do you acknowledge the graffiti while saying, "No can do, bud"?
+
+What about when they've just installed a game, but you've detected they have some kind of software that _could_ be used to cheat?
+
+Also, how does a room with several writers go from "Click anywhere to begin" to "Select anywhere to begin"? <Sidenote>No alcohol or illicit substances were involved.</Sidenote>
+
+<Gallery images={[
+  {src: '/img/select-anywhere.png', alt: 'Select anywhere to continue'},
+  {src: '/img/click-anywhere.png', alt: 'Click anywhere to continue'},
+]} />
+_**Left**: The call-to-action (CTA) button in teensy font<Sidenote>The teensy font felt like an accessibility issue to me, but the debate with other stakeholders was in a deadlock, so it stayed.</Sidenote>saying "Select anywhere...". **Right**: When we lived in a simpler, PC-only times and only had to use "Click"._
+
+## "Select anywhere to begin"
+
+Sometime around 2013, our producer from Big Fish Games (BFG) told my team to change text such as **Click XYZ** to **Select XYZ**. I remember feeling weirded out by that. _Select_. We went from _Click_, a tangible action to ..._Select_. BFG was our publisher and was paying us advances **and** royalties, much like in the book industry, so their feedback mattered.
+
+To be fair, games do use **Select your character**.
+
+<Gallery images={[
+  {src: '/img/microcopy-select-turtle.jpg', alt: 'Select your turtle screen'},
+]} />
+_**Select your turtle** screen from Teenage Mutant Ninja Turtles, 1989 arcade game._
+
+Returning to 2013: the PC Casual crowd was shifting towards mobile. They could play anywhere, and more importantly, make impulse buying decisions anywhere. The research division had run the tests and according to them, people generally understood that **Select** could mean **Tap** on mobile and **Click** on PC. This meant that we didn't have to add an extra substitution rule for this kind of microcopy. <Sidenote>Game engines already have some kind of substitution method in the localization string; it would have been an extra layer but not necessarily hard.</Sidenote>
+
+So we entered <kbd>Ctrl+H</kbd>and replaced **Click** with **Select**.
+
+<Gallery images={[
+  {src: '/img/microcopy-find-replace.jpg', alt: 'Excel find and replace'},
+]} />
+_Moments before irrevocable disaster._
+
+Here are some microcopy examples from the localization sheet that are present in the final, shipped, shiny gold master:
+
+| Microcopy | Context |
+| -------  | ------ | 
+| Hi! Your cursor changes into a speech balloon when you can talk to someone. **Select me in the scene** as indicated by the spotlight.       | Onboarding / game tutorial through dialog with your companion in the game, the Wind Cat. |
+|When you're done looking around, **select outside the zoom window** to close it. | Tutorial. |
+| Welcome to your first subgame! To get additional instructions, **select the "?"**. | First time players encounter a puzzle. |
+
+## Microcopy matters
+
+One word is hardly a hill to die on when there are so many other mountains, so we did the change and went on with our lives. It weirded me out, but I wasn't the one who had to add "Platform-specific wording for English, German, Traditional Chinese, Italian, and so on" to the QA matrix. Also, I didn't have to communicate with 20-30 dev companies on implementing a substitution mechanism.<Sidenote>BFG was publishing two (2) Puzzle Adventure games a week for nearly a decade. They worked with a lot of developers.</Sidenote>
+
+Therein we see that microcopy does matter. It takes effort to communicate. Doing microcopy well means paying a pound (or ounce) of flesh in QA or feature implementation or localization, not including the occasional political situation (in this case, dealing with 20-30 companies).
+
+Every day, writers have to make tradeoffs. I have no doubt in my mind that BFG's wordsmiths found **Select** goofy. I also have no doubt in my mind that BFG's wordsmiths had bigger fish to fry.
+
+If they let go of "Select" versus the more platform-specific "Tap" or "Click", they might have more bandwidth to ask for a more important change elsewhere. Or, if the political/engineering budget has been tapped out, they may bring it up at a more advantageous time.
+
+What's the lesson in this story? Sometimes you have to let your English-degree peers roast you when they see "Select anywhere to begin"<Sidenote>There's an option _worse_ than Select. Think about it. Scroll down to the end to find out what's worse.</Sidenote> on a game with your name on it. If you're still in the building, you can live to fight another day.
+
+## The case for indirect UX writing
+
+There aren't a lot of situations in UX writing where you, the UX writer, want to be indirect. But these cases do exist.
+
+In 2015 my team transitioned to mobile-first games and bid Big Fish farewell. We said hello to the mobile midcore genre, which encompasses autochess, battlers, RPG-lite games. We started working on one such project, called Monster Roller, where players can battle against fellow players (PvP).
+
+When you enter a name for your game profile in single-player offline games, that name is visible only to you, anyone who has your PC's password, and the FBI. If you want to name yourself the **Death of Rats** or **Alice with Three Fingers** the only concern is the character limit.
+
+<Gallery ratio='9 / 16' images={[
+  {src: '/img/monster-roller-player-name.png', alt: 'Click anywhere to continue'},
+  {src: '/img/monster-roller-player-req.png', alt: 'Select anywhere to continue'},
+]} />
+_To prevent colorful and risque emoji the **Enter player name**<Sidenote>The **Player Name** title on the image was temporary; these screenshots are from a dev build.</Sidenote> dialog box only allows the user to enter alphanumeric characters, no symbols, and requires a minimum of four characters._
+
+For online games, where you interact with other players, names matter a lot. Put 2 `G`s together? Banned.<Sidenote>GG, "good game", often sarcastically delivered.</Sidenote> Swear words in any language? Banned. Racial slurs? Absolutely banned, as they should be. Ribald ASCII art is no exception.
+
+Very often mobile games are vague about what you did, because **a direct approach sounds accusatory**, and accusations make bad press.
+
+> Here's a core principle of UX writing they don't tell you: "accusatory" UX writing will be pilloried on the App Store and Play Store reviews.
+
+
+| Approach | Microcopy | Player response |
+| -------  | ------ | ------ |
+| Direct UX writing | You are using GAME GENIE, a software associated with modding games. Uninstall GAME GENIE to start the game. | "This game just called me a cheater." |
+| Indirect UX writing | You have software that is incompatible with this app. | "This game is bugged." | 
+
+
+| Approach | Microcopy | Player response |
+| -------  | ------ | ------ |
+| Direct UX writing | Don't use racial slurs in your account name. Enter another name. | "This game just called me a racist."|
+| Indirect UX writing | Choose another name. | "This game is too PC." | 
+
+You think you're being helpful by pointing out what the player did wrong and what specifically they should correct, but that's not what the player hears. 
+
+The game shipped with the indirect microcopy. We did not provide a next step or solution for the "software incompatibility", nor did we directly say it was modding software. For games with an ELO rating, you need players who play in good faith. These players were not the community we wanted for a healthy ecosystem.
+
+Forums and public spaces can also benefit from moderation and restraint in their microcopy
+
+## Localization and tone in writing
+
+This last bit is not strictly microcopy, but a broader note on UX writing.
+
+<div>
+  <iframe
+    className="youtube-embed"
+    src={"https://www.youtube.com/embed/e_SYLQvWZuU?si=XZMPMp-hMRVGdaoW&t=113"}
+    title="YouTube Video Player"
+    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  ></iframe>
+</div>
+
+<div>
+  <iframe
+    className="youtube-embed"
+    src={"https://www.youtube.com/embed/7JFDvxVyQmM?si=woX8NKAKo4zY6dMS&t=100"}
+    title="YouTube Video Player"
+    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  ></iframe>
+</div>
+
+In the first video, the speaker has a British accent. In the second, it's just gone. Despite it being a British setting, the voice over (VO) was obviously American and the intended audience **did not like the inauthenticity**. When we dropped it for the second game, there were no more complaints for the player character.
+
+We never seriously considered having the text in British English and many British conventions such as driving on the right side of the road were not strictly enforced. The interesting thing is that the players **seemed not to notice**! Put another way, writing for your audience doesn't mean being faithful to the setting.
+
+> If we had insisted on British spelling, the players would notice it, and you want the mode of delivery (voice, tone, grammar) to feel natural such that the user doesn't notice it. **UX writing should not call attention to itself unless we have a reason for it to.** So if we had a sweater, we'd call it a sweater, not a jumper. 
+
+## Takeaways
+
+- You won't win every battle, and sometimes that's okay. Always focus on the bigger picture in your content and UX writing strategy.
+- Both direct and indirect approaches have their uses in communicating with users.
+- The mode of delivery musn't pull a user out of their immersion. This is why localization matters.
+
+The option worse than **Select**, by the way, is **Tap/Click**: "Tap/Click anywhere to continue". I'll leave it to my readers to decide why.

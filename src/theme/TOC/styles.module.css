@@ -1,0 +1,67 @@
+/* Replaces theme-classic's TOC/styles.module.css, which is no longer imported
+   once TOC/index.tsx is swizzled. The sticky/scroll rules are carried over
+   verbatim; .toggle and .chevron are new. */
+
+.tableOfContents {
+  max-height: calc(100vh - (var(--ifm-navbar-height) + 2rem));
+  overflow-y: auto;
+  position: sticky;
+  top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+/* Sticks to the top of the scroll container so the header stays reachable on
+   long TOCs. Opaque background so items don't show through underneath. */
+.toggle {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.35rem 0.5rem;
+  border: 0;
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-emphasis-700);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--ifm-font-weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.toggle:hover {
+  color: var(--ifm-color-primary);
+}
+
+.toggle:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.chevron {
+  flex-shrink: 0;
+  transition: transform var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
+}
+
+.chevronCollapsed {
+  transform: rotate(-90deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chevron {
+    transition: none;
+  }
+}
+
+/* Parity with upstream: the desktop TOC is already gated on windowSize in
+   DocItem/Layout, this is the CSS belt to that braces. */
+@media (max-width: 996px) {
+  .tableOfContents {
+    display: none;
+  }
+}
