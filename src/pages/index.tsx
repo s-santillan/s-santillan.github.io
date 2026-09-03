@@ -29,7 +29,7 @@ export default function Home(): ReactNode {
     <HtmlClassNameProvider className="landing-page">
       <Layout
         title={`${siteConfig.title}`}
-        description="Portfolio site of Sara Santillan<head />">
+        description="Portfolio site of Sara Santillan">
         <HomepageHeader />
         <main>
         <div className="container">
