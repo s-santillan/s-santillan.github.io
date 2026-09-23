@@ -39,20 +39,20 @@ export default function Home(): ReactNode {
           <div className="row">
             <div className="col text--center">
               <h5 className="text--normal"><sub>2010-2014</sub><br />PC Game Dev</h5>
-              <p><a href='posts/otherworld1'>Otherworld: Spring of Shadows</a></p>
-              <p><a href='posts/otherworld2'>Otherworld: Omens of Summer</a></p>
-              <p><a href='posts/otherworld3'>Otherworld: Shades of Fall</a></p>
-              <p><a href='posts/awakening7'>Awakening: The Golden Age</a></p>
+              <p><a href='posts/portfolio/otherworld1'>Otherworld: Spring of Shadows</a></p>
+              <p><a href='posts/portfolio/otherworld2'>Otherworld: Omens of Summer</a></p>
+              <p><a href='posts/portfolio/otherworld3'>Otherworld: Shades of Fall</a></p>
+              <p><a href='posts/portfolio/awakening7'>Awakening: The Golden Age</a></p>
             </div>
             <div className="col text--center">
               <h5 className="text--normal"><sub>2015-2019</sub><br />Mobile & Web Dev</h5>
-              <p><a href='posts/monster-roller'>Monster Roller</a></p>
-              <p><a href='posts/maria-health'>Maria Health</a></p>
-              <p><a href='posts/relentless'>Relentless</a></p>
+              <p><a href='posts/portfolio/monster-roller'>Monster Roller</a></p>
+              <p><a href='posts/portfolio/maria-health'>Maria Health</a></p>
+              <p><a href='posts/portfolio/relentless'>Relentless</a></p>
             </div>
             <div className="col text--center">
               <h5 className="text--normal"><sub>2020-2026</sub><br />UX & Tech Writing</h5>
-              <p><a href='posts/freelance-projects'>Selected Projects</a></p>
+              <p><a href='posts/portfolio/freelance-projects'>Selected Projects</a></p>
             </div>
           </div>
           <div className="row">
@@ -60,8 +60,8 @@ export default function Home(): ReactNode {
           {/*<img height='15px' width="128px" src="/img/fleuron1.png" /> */}
               <hr />
               <h2>Posts</h2>
-              <p><a href='posts/microcopy-is-a-goldmine'>Microcopy is a goldmine, and sometimes a minefield</a></p>
-              {/*<p><a href='posts/microcopy-is-a-goldmine'>The language necessary to drive Claude</a></p> */}
+              <p><a href='posts/articles/microcopy-is-a-goldmine'>Microcopy is a goldmine, and sometimes a minefield</a></p>
+              {/*<p><a href='posts/articles/microcopy-is-a-goldmine'>The language necessary to drive Claude</a></p> */}
               <p>The language you need to drive Claude<br /><sup>[COMING SOON]</sup></p>
             </div>
           </div>

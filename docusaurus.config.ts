@@ -59,6 +59,24 @@ const config: Config = {
     'https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&display=swap',
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        // Posts used to sit directly under /posts/. Each subfolder listed here
+        // gets a redirect from its old flat URL, e.g.
+        // /posts/otherworld1 → /posts/portfolio/otherworld1.
+        createRedirects(existingPath) {
+          const match = existingPath.match(/^\/posts\/(portfolio|articles)\/(.+)$/);
+          if (match) {
+            return [`/posts/${match[2]}`];
+          }
+          return undefined;
+        },
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
