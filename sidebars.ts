@@ -17,15 +17,15 @@ const sidebars: SidebarsConfig = {
     label: 'Projects',
     collapsed: false,
     items: [
-      'overview',
-      'otherworld1',
-      'otherworld2',
-      'otherworld3',
-      'awakening7',
-      'monster-roller',
-      'maria-health',
-      'relentless',
-      'freelance-projects',
+      'portfolio/overview',
+      'portfolio/otherworld1',
+      'portfolio/otherworld2',
+      'portfolio/otherworld3',
+      'portfolio/awakening7',
+      'portfolio/monster-roller',
+      'portfolio/maria-health',
+      'portfolio/relentless',
+      'portfolio/freelance-projects',
     ],
   },
   {
@@ -33,7 +33,7 @@ const sidebars: SidebarsConfig = {
     label: 'UX writing',
     collapsed: false,
     items: [
-      'microcopy-is-a-goldmine',
+      'articles/microcopy-is-a-goldmine',
     ]
   },
   ],
