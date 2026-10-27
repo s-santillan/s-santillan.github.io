@@ -14,7 +14,8 @@ function HomepageHeader() {
       <div className="container">
         <p className="hero__subtitle">{siteConfig.title}</p>
         <p>Sara Santillan</p>
-        <p><a href ='posts/tags/ux-writing'>UX Writer</a> | <a href ='posts/tags/technical-writing'>Tech Writer</a></p>
+        <p>Project Management & Writing</p>
+        <p>B2B SaaS, Mobile and Casual Games</p>
       </div>
     </header>
   );

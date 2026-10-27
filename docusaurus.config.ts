@@ -109,7 +109,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'I think therefore I communicate',
+      title: 'Sara Santillan - Portfolio', 
       logo: {
         alt: 'I think therefore I communicate logo',
         src: 'img/favicon.png',
