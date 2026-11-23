@@ -125,6 +125,12 @@ const config: Config = {
           label: 'Posts',
         },
         {
+          type: 'doc',
+          docId: 'samples/overview',
+          position: 'left',
+          label: 'Writing samples',
+        },
+        {
           href: 'https://github.com/s-santillan',
           label: 'GitHub',
           position: 'right',
